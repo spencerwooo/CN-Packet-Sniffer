@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.spencer.app.AppTest" time="0.112" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.spencer.app.AppTest" time="0.046" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
     <property name="java.specification.version" value="12"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openjdk-12.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire/surefirebooter4385224623433421047.jar /Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire 2019-04-24T23-27-44_137-jvmRun1 surefire7766586679856332663tmp surefire_08604016705419425150tmp"/>
+    <property name="sun.java.command" value="/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire/surefirebooter7068224644365139508.jar /Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire 2019-04-25T10-50-33_843-jvmRun1 surefire3471764114451303695tmp surefire_01745609783341685674tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/test-classes:/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/classes:/Users/spencerwoo/.m2/repository/org/pcap4j/pcap4j-core/2.0.0-alpha.3/pcap4j-core-2.0.0-alpha.3.jar:/Users/spencerwoo/.m2/repository/net/java/dev/jna/jna/5.1.0/jna-5.1.0.jar:/Users/spencerwoo/.m2/repository/org/pcap4j/pcap4j-packetfactory-static/2.0.0-alpha.3/pcap4j-packetfactory-static-2.0.0-alpha.3.jar:/Users/spencerwoo/.m2/repository/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar:/Users/spencerwoo/.m2/repository/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar:/Users/spencerwoo/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar:/Users/spencerwoo/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/spencerwoo/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -29,7 +29,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire/surefirebooter4385224623433421047.jar"/>
+    <property name="surefire.real.class.path" value="/Users/spencerwoo/Documents/github.com/SchoolProjects/CN-Packet-Sniffer/target/surefire/surefirebooter7068224644365139508.jar"/>
     <property name="user.script" value="Hans"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="12+33"/>
@@ -53,5 +53,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="56.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.spencer.app.AppTest" time="0.003"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.spencer.app.AppTest" time="0.002"/>
 </testsuite>

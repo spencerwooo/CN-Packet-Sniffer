@@ -28,7 +28,7 @@
                     </font>
                 </Label>
                 <Label fx:id="selectedDevice" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="270.0"
-                       prefWidth="360.0" text="Label" wrapText="true">
+                       prefWidth="360.0" wrapText="true">
                     <VBox.margin>
                         <Insets top="100.0"/>
                     </VBox.margin>

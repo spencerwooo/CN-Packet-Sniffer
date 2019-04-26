@@ -3,6 +3,7 @@ package com.spencer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.pcap4j.core.PcapNetworkInterface;
@@ -20,10 +21,11 @@ public class PrimaryController {
 
     private ArrayList<String> listViewData = new ArrayList<>();
     private ObservableList observableList = FXCollections.observableArrayList();
+    private List<PcapNetworkInterface> allDevices;
 
     public void initialize() throws IOException {
         PacketSniffer packetSniffer = new PacketSniffer();
-        List<PcapNetworkInterface> allDevices = packetSniffer.getNetworkDeviceList();
+        allDevices = packetSniffer.getNetworkDeviceList();
 
         for (PcapNetworkInterface device : allDevices) {
             listViewData.add(device.getName());
@@ -40,6 +42,22 @@ public class PrimaryController {
 
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        int index = deviceListView.getSelectionModel().getSelectedIndex();
+        System.out.println(index);
+
+        if (index < 0) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText(null);
+            alert.setContentText("You didn't select anything.");
+            alert.showAndWait();
+        } else {
+            PcapNetworkInterface selectedDevice = allDevices.get(index);
+            System.out.println(selectedDevice);
+
+            App.setRoot("secondary");
+        }
+
     }
+
 }

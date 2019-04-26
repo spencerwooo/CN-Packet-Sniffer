@@ -3,6 +3,9 @@ package com.spencer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -14,10 +17,12 @@ import java.util.List;
 
 public class PrimaryController {
 
+    private static Scene scene;
+
     @FXML
     private ListView<String> deviceListView;
     @FXML
-    private Label selectedDevice;
+    private Label selectedDeviceLabel;
 
     private ArrayList<String> listViewData = new ArrayList<>();
     private ObservableList observableList = FXCollections.observableArrayList();
@@ -36,14 +41,13 @@ public class PrimaryController {
 
         deviceListView.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
             int index = deviceListView.getSelectionModel().getSelectedIndex();
-            selectedDevice.setText(allDevices.get(index).toString());
+            selectedDeviceLabel.setText(allDevices.get(index).toString());
         });
     }
 
     @FXML
     private void switchToSecondary() throws IOException {
         int index = deviceListView.getSelectionModel().getSelectedIndex();
-        System.out.println(index);
 
         if (index < 0) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -55,7 +59,16 @@ public class PrimaryController {
             PcapNetworkInterface selectedDevice = allDevices.get(index);
             System.out.println(selectedDevice);
 
-            App.setRoot("secondary");
+            FXMLLoader loader = new FXMLLoader(App.class.getResource("secondary.fxml"));
+            Parent parent = loader.load();
+
+            SecondaryController secondaryController = loader.getController();
+            System.out.println(secondaryController);
+            secondaryController.setDevice(selectedDevice);
+
+//            App.setRoot("secondary");
+            Scene scene = selectedDeviceLabel.getScene();
+            scene.setRoot(parent);
         }
 
     }

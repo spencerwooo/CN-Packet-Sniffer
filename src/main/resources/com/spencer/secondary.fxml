@@ -1,25 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="400.0" minWidth="600.0" spacing="20.0"
       xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.spencer.SecondaryController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Label fx:id="deviceLabel" text="Packets on device: device">
+    <HBox>
+        <HBox prefHeight="30.0" prefWidth="512.0">
+            <Label fx:id="deviceLabel" contentDisplay="TOP" prefHeight="30.0" prefWidth="360.0"
+                   text="Packets on device: en0" wrapText="true">
+                <font>
+                    <Font name="Noto Sans CJK SC Black" size="14.0"/>
+                </font>
+            </Label>
+        </HBox>
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="48.0" text="Back">
+            <font>
+                <Font name="Noto Sans CJK SC Regular" size="13.0"/>
+            </font>
+        </Button>
+    </HBox>
+    <ListView fx:id="packetListView" prefHeight="114.0" prefWidth="560.0"/>
+    <Label text="Packet Detail">
         <font>
             <Font name="Noto Sans CJK SC Black" size="14.0"/>
         </font>
     </Label>
-    <ListView fx:id="packetList" prefHeight="270.0" prefWidth="560.0"/>
-    <Button fx:id="secondaryButton" onAction="#switchToPrimary" text="Back to Device Manager">
-        <font>
-            <Font name="Noto Sans CJK SC Regular" size="13.0"/>
-        </font>
-    </Button>
+    <HBox prefHeight="20.0" prefWidth="560.0">
+        <Label prefHeight="20.0" prefWidth="100.0" text="TimeStamp">
+            <font>
+                <Font name="Noto Sans CJK SC Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Label fx:id="timestampLabelView" prefHeight="20.0" prefWidth="460.0"/>
+    </HBox>
+    <HBox layoutX="30.0" layoutY="254.0" prefHeight="20.0" prefWidth="560.0">
+        <Label prefHeight="20.0" prefWidth="100.0" text="Header">
+            <font>
+                <Font name="Noto Sans CJK SC Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Label fx:id="headerLabelView" prefHeight="20.0" prefWidth="460.0"/>
+    </HBox>
+    <HBox prefHeight="127.0" prefWidth="560.0">
+        <Label prefHeight="17.0" prefWidth="100.0" text="Payload">
+            <font>
+                <Font name="Noto Sans CJK SC Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Label fx:id="payloadLabelView" alignment="TOP_LEFT" prefHeight="150.0" prefWidth="460.0" wrapText="true"/>
+    </HBox>
+    <Button fx:id="snifferButton" mnemonicParsing="false" onAction="#startSniffing" text="Start"/>
 </VBox>

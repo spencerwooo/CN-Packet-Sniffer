@@ -25,7 +25,7 @@ public class PrimaryController {
     private Label selectedDeviceLabel;
 
     private ArrayList<String> listViewData = new ArrayList<>();
-    private ObservableList observableList = FXCollections.observableArrayList();
+    private ObservableList<String> observableList = FXCollections.observableArrayList();
     private List<PcapNetworkInterface> allDevices;
 
     public void initialize() throws IOException {
@@ -63,10 +63,8 @@ public class PrimaryController {
             Parent parent = loader.load();
 
             SecondaryController secondaryController = loader.getController();
-            System.out.println(secondaryController);
             secondaryController.setDevice(selectedDevice);
 
-//            App.setRoot("secondary");
             Scene scene = selectedDeviceLabel.getScene();
             scene.setRoot(parent);
         }

@@ -1,58 +1,49 @@
 package com.spencer.app;
 
+import java.util.ArrayList;
+
 import org.pcap4j.core.NotOpenException;
-import org.pcap4j.core.PacketListener;
-import org.pcap4j.core.PcapHandle;
 import org.pcap4j.core.PcapNativeException;
 import org.pcap4j.core.PcapNetworkInterface;
-import org.pcap4j.core.PcapNetworkInterface.PromiscuousMode;
-import org.pcap4j.util.NifSelector;
+import org.pcap4j.core.PcapPacket;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 /**
  * Hello world!
  *
  */
-public class App {
+public class App extends Application {
 
-  public static PcapNetworkInterface getNetworkDeviceList() {
-    PcapNetworkInterface devices = null;
-    try {
-      devices = new NifSelector().selectNetworkInterface();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return devices;
-  }
+  private static final int maxPackets = 5;
 
-  public static void main(String[] args) throws PcapNativeException, NotOpenException {
-    PcapNetworkInterface device = getNetworkDeviceList();
+  public void start(Stage stage) throws PcapNativeException, NotOpenException {
+    PacketSniffer packetSniffer = new PacketSniffer();
+    PcapNetworkInterface device = packetSniffer.getNetworkDeviceList();
+    ArrayList<PcapPacket> packetList = new ArrayList<PcapPacket>();
 
     if (device == null) {
       System.out.println("No device selected, exiting.");
       System.exit(0);
     }
 
-    System.out.println(device.getName() + "[" + device.getDescription() + "]");
+    // System.out.println(device.getName() + "[" + device.getDescription() + "]");
 
-    // Open handle to capture packets
-    int snapshotLength = 65536;
-    int readTimeout = 50;
-    PromiscuousMode mode = PromiscuousMode.PROMISCUOUS;
-    final PcapHandle handle = device.openLive(snapshotLength, mode, readTimeout);
+    Label l = new Label(device.getName() + "[" + device.getDescription() + "]");
 
-    // Set packet listener
-    PacketListener packetListener = packet -> {
-      System.out.println(packet.getTimestamp());
-      System.out.println(packet);
-    };
+    Scene scene = new Scene(new StackPane(l), 640, 480);
+        stage.setScene(scene);
+        stage.show();
 
-    try {
-      int maxPackets = 5;
-      handle.loop(maxPackets, packetListener);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
+    // packetList = packetSniffer.sniffPackets(maxPackets, device);
+    // System.out.println(packetList);
+  }
 
-    handle.close();
+  public static void main(String[] args)  {
+    launch();
   }
 }

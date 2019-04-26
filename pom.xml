@@ -14,6 +14,16 @@
   </properties>
   <dependencies>
     <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>11.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>11.0.2</version>
+    </dependency>
+    <dependency>
       <groupId>org.pcap4j</groupId>
       <artifactId>pcap4j-core</artifactId>
       <version>[1.0, 2.0)</version>
@@ -24,14 +34,14 @@
       <version>[1.0, 2.0)</version>
     </dependency>
     <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.5</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.5</version>
     </dependency>
     <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-log4j12</artifactId>
-        <version>1.7.5</version>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.7.5</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -82,6 +92,14 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.openjfx</groupId>
+          <artifactId>javafx-maven-plugin</artifactId>
+          <version>0.0.1</version>
+          <configuration>
+            <mainClass>com.spencer.app.App</mainClass>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

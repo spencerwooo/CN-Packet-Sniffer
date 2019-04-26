@@ -1,7 +1,5 @@
 package com.spencer;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -28,13 +26,16 @@ public class PrimaryController {
         List<PcapNetworkInterface> allDevices = packetSniffer.getNetworkDeviceList();
 
         for (PcapNetworkInterface device : allDevices) {
-            listViewData.add(device.toString());
+            listViewData.add(device.getName());
         }
 
         observableList.addAll(listViewData);
         deviceListView.setItems(observableList);
 
-        deviceListView.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> selectedDevice.setText(t1));
+        deviceListView.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+            int index = deviceListView.getSelectionModel().getSelectedIndex();
+            selectedDevice.setText(allDevices.get(index).toString());
+        });
     }
 
     @FXML

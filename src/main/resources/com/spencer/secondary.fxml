@@ -7,7 +7,7 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="400.0" minWidth="600.0" spacing="20.0"
       xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.spencer.SecondaryController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <HBox>
         <HBox prefHeight="30.0" prefWidth="512.0">

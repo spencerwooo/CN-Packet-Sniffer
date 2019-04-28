@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.pcap4j.core.*;
+import org.pcap4j.core.PcapNetworkInterface.PromiscuousMode;
 
 import java.io.IOException;
 import java.net.URL;
@@ -50,13 +51,28 @@ public class SecondaryController implements Initializable {
 
         // Open handle to capture packets
         int snapshotLength = 65536;
-        int readTimeout = 50;
-        PcapNetworkInterface.PromiscuousMode mode = PcapNetworkInterface.PromiscuousMode.PROMISCUOUS;
-        final PcapHandle handle = device.openLive(snapshotLength, mode, readTimeout);
+        int readTimeout = 1000;
+        PromiscuousMode mode = PromiscuousMode.PROMISCUOUS;
+        PcapHandle handle = device.openLive(snapshotLength, mode, readTimeout);
+
+//        String filter = "tcp port 80";
+//        handle.setFilter(filter, BpfProgram.BpfCompileMode.OPTIMIZE);
 
         PacketListener packetListener = packet -> {
+            System.out.println(packet);
+
             packetList.add(packet);
             observableList.add(packet.toString());
+
+//            if (packet.contains(IpV4Packet.class)) {
+//                System.out.println(packet.get(IpV4Packet.class).getHeader().getSrcAddr());
+//            }
+//            if (packet.contains(IpV6Packet.class)) {
+//                System.out.println(packet.get(IpV6Packet.class).getHeader().getSrcAddr());
+//            }
+//            if (packet.contains(EthernetPacket.class)) {
+//                System.out.println(packet.get(EthernetPacket.class).getHeader().getSrcAddr());
+//            }
         };
 
         try {
@@ -69,13 +85,13 @@ public class SecondaryController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {
         packetListView.setItems(observableList);
 
         packetListView.getSelectionModel().selectedItemProperty().addListener((observable) -> {
             int index = packetListView.getSelectionModel().getSelectedIndex();
             PcapPacket selectedPacket = packetList.get(index);
-            System.out.println(selectedPacket);
+            System.out.println(selectedPacket.getPayload());
 
             if (selectedPacket.getHeader() != null) {
                 headerLabelView.setText(selectedPacket.getHeader().toString());

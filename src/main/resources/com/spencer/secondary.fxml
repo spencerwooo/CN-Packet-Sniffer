@@ -24,7 +24,7 @@
             </font>
         </Button>
     </HBox>
-    <ListView fx:id="packetListView" prefHeight="114.0" prefWidth="584.0"/>
+    <ListView fx:id="packetListView" prefHeight="161.0" prefWidth="584.0"/>
     <Label text="Packet Detail">
         <font>
             <Font name="Noto Sans CJK SC Black" size="14.0"/>

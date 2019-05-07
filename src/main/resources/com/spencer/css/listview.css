@@ -1,0 +1,10 @@
+.list-view {
+    -fx-border-color: none;
+    -fx-background-insets: none;
+    -fx-selection-bar: #404040;
+}
+
+.list-view .list-cell {
+    -fx-border-color: white;
+    -fx-background-insets: none;
+}

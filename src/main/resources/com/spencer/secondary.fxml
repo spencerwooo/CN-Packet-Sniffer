@@ -5,7 +5,8 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" minHeight="400.0" minWidth="600.0" spacing="20.0"
-      xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.spencer.SecondaryController">
+      style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.172-ea"
+      fx:controller="com.spencer.SecondaryController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
@@ -18,13 +19,14 @@
                 </font>
             </Label>
         </HBox>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="77.0" text="Back">
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="77.0"
+                style="-fx-background-color: #404040;" text="BACK" textFill="WHITE">
             <font>
                 <Font name="Noto Sans CJK SC Regular" size="13.0"/>
             </font>
         </Button>
     </HBox>
-    <TableView fx:id="packetTableView" prefHeight="200.0" prefWidth="200.0">
+    <TableView fx:id="packetTableView" prefHeight="200.0" prefWidth="200.0" stylesheets="@css/tableview.css">
         <columns>
             <TableColumn fx:id="packetTime" prefWidth="140.0" text="Time"/>
             <TableColumn fx:id="packetSource" prefWidth="160.0" text="Source"/>
@@ -51,9 +53,10 @@
                 <Font name="Noto Sans CJK SC Bold" size="13.0"/>
             </font>
         </Label>
-        <ScrollPane prefHeight="251.0" prefWidth="500.0">
-            <AnchorPane prefWidth="485.0">
-                <Label fx:id="payloadLabelView" alignment="TOP_LEFT" prefWidth="470.0" wrapText="true">
+        <ScrollPane prefHeight="251.0" prefWidth="500.0" style="-fx-background-color: white; -fx-border-color: white;">
+            <AnchorPane prefWidth="485.0" style="-fx-background-color: white;">
+                <Label fx:id="payloadLabelView" alignment="TOP_LEFT" prefWidth="470.0"
+                       style="-fx-background-color: white;" wrapText="true">
                     <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
                     </padding>
@@ -61,6 +64,6 @@
             </AnchorPane>
         </ScrollPane>
     </HBox>
-    <Button fx:id="snifferButton" mnemonicParsing="false" onAction="#startSniffing" prefHeight="27.0" prefWidth="90.0"
-            text="Start"/>
+    <Button fx:id="snifferButton" mnemonicParsing="false" onAction="#startSniffing" prefHeight="27.0" prefWidth="98.0"
+            style="-fx-background-color: #404040;" text="START" textFill="WHITE"/>
 </VBox>

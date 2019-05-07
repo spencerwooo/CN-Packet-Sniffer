@@ -10,7 +10,7 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <HBox>
-        <HBox prefHeight="30.0" prefWidth="512.0">
+        <HBox prefHeight="30.0" prefWidth="523.0">
             <Label fx:id="deviceLabel" contentDisplay="TOP" prefHeight="30.0" prefWidth="360.0"
                    text="Packets on device: en0" wrapText="true">
                 <font>
@@ -18,13 +18,20 @@
                 </font>
             </Label>
         </HBox>
-        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="71.0" text="Back">
+        <Button fx:id="secondaryButton" onAction="#switchToPrimary" prefHeight="30.0" prefWidth="77.0" text="Back">
             <font>
                 <Font name="Noto Sans CJK SC Regular" size="13.0"/>
             </font>
         </Button>
     </HBox>
-    <ListView fx:id="packetListView" prefHeight="161.0" prefWidth="584.0"/>
+    <TableView fx:id="packetTableView" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="packetTime" prefWidth="140.0" text="Time"/>
+            <TableColumn fx:id="packetSource" prefWidth="160.0" text="Source"/>
+            <TableColumn fx:id="packetDestination" prefWidth="160.0" text="Target"/>
+            <TableColumn fx:id="packetType" prefWidth="109.0" text="Type"/>
+        </columns>
+    </TableView>
     <Label text="Packet Detail">
         <font>
             <Font name="Noto Sans CJK SC Black" size="14.0"/>

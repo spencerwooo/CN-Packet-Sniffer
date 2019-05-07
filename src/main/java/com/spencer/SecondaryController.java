@@ -1,11 +1,11 @@
 package com.spencer;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import org.pcap4j.core.*;
 import org.pcap4j.core.PcapNetworkInterface.PromiscuousMode;
 import org.pcap4j.packet.EthernetPacket;
@@ -29,9 +29,15 @@ public class SecondaryController implements Initializable {
     private Label payloadLabelView;
 
     @FXML
-    private ListView<String> packetListView;
-
-    private ObservableList<String> observableList = FXCollections.observableArrayList();
+    private TableView<PacketTableItem> packetTableView;
+    @FXML
+    private TableColumn<PacketTableItem, String> packetTime;
+    @FXML
+    private TableColumn<PacketTableItem, String> packetSource;
+    @FXML
+    private TableColumn<PacketTableItem, String> packetDestination;
+    @FXML
+    private TableColumn<PacketTableItem, String> packetType;
 
     void setDevice(PcapNetworkInterface device) {
         this.device = device;
@@ -46,7 +52,7 @@ public class SecondaryController implements Initializable {
 
     @FXML
     private void startSniffing() throws PcapNativeException, NotOpenException {
-        int maxPackets = 5;
+        int maxPackets = 10;
 
         // Open handle to capture packets
         int snapshotLength = 65536;
@@ -61,12 +67,17 @@ public class SecondaryController implements Initializable {
             System.out.println(packet);
             packetList.add(packet);
 
-            if (packet.contains(EthernetPacket.class)) {
-                observableList.add(packet.get(EthernetPacket.class).getHeader().toString());
-//                System.out.println(packet.get(EthernetPacket.class).getHeader().getSrcAddr());
-            } else {
-                observableList.add(packet.toString());
-            }
+            DataHandler dataHandler = new DataHandler();
+
+            EthernetPacket.EthernetHeader ethernetHeader = packet.get(EthernetPacket.class).getHeader();
+
+            String packetTimestamp = dataHandler.timestampFormatter(packet.getTimestamp());
+            String packetSourceAddr = ethernetHeader.getSrcAddr().toString();
+            String packetDestinationAddr = ethernetHeader.getDstAddr().toString();
+            String packetType = ethernetHeader.getType().toString();
+
+            packetTableView.getItems().add(new PacketTableItem(packetTimestamp, packetSourceAddr, packetDestinationAddr, packetType));
+
         };
 
         try {
@@ -80,10 +91,13 @@ public class SecondaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {
-        packetListView.setItems(observableList);
+        packetTime.setCellValueFactory(new PropertyValueFactory<>("packetTimestamp"));
+        packetSource.setCellValueFactory(new PropertyValueFactory<>("packetSourceAddr"));
+        packetDestination.setCellValueFactory(new PropertyValueFactory<>("packetDestinationAddr"));
+        packetType.setCellValueFactory(new PropertyValueFactory<>("packetType"));
 
-        packetListView.getSelectionModel().selectedItemProperty().addListener((observable) -> {
-            int index = packetListView.getSelectionModel().getSelectedIndex();
+        packetTableView.getSelectionModel().selectedIndexProperty().addListener((number) -> {
+            int index = packetTableView.getSelectionModel().getSelectedIndex();
             PcapPacket selectedPacket = packetList.get(index);
 
             DataHandler dataHandler = new DataHandler();

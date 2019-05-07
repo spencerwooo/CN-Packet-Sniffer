@@ -1,4 +1,6 @@
 com/spencer/PacketSniffer.class
 com/spencer/App.class
 com/spencer/PrimaryController.class
+com/spencer/PacketTableItem.class
+com/spencer/DataHandler.class
 com/spencer/SecondaryController.class

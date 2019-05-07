@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80e64f27-1cac-479d-bd11-37144684efc6" name="Default Changelist" comment="Change list view to table view">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/spencer/css/scrollpane.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/spencer/css/listview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/spencer/css/listview.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/spencer/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/spencer/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/spencer/PrimaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spencer/PrimaryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/spencer/SecondaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spencer/SecondaryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/spencer/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/spencer/primary.fxml" afterDir="false" />
@@ -35,11 +29,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/App.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+            <state relative-caret-position="589">
+              <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,7 +44,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/PrimaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1224">
+            <state relative-caret-position="180">
               <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
             </state>
           </provider>
@@ -56,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
+            <state relative-caret-position="112">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -74,48 +71,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state relative-caret-position="288">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="52" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/listview.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="30" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="30" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="447">
-              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+              <caret line="72" column="81" lean-forward="true" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/scrollpane.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -156,7 +126,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spencer/Mediator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spencer/PacketSniffer.java" />
         <option value="$PROJECT_DIR$/src/main/java/module-info.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/spencer/App.java" />
         <option value="$USER_HOME$/.m2/settings.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/spencer/PrimaryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/spencer/DataHandler.java" />
@@ -165,9 +134,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/spencer/css/listview.css" />
         <option value="$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/com/spencer/css/scrollpane.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/spencer/App.java" />
       </list>
     </option>
   </component>
@@ -461,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557220269010</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add CSS styling to UI">
+      <created>1557227414948</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1557227414948</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -565,7 +542,8 @@
     <MESSAGE value="Add scrollable text view and formatted date" />
     <MESSAGE value="Change list view to table view" />
     <MESSAGE value="Add CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add CSS" />
+    <MESSAGE value="Add CSS styling to UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add CSS styling to UI" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -646,27 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/PrimaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="96" column="22" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -681,13 +638,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/SecondaryController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="112">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/listview.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -696,25 +659,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/tableview.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/scrollpane.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="30" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="30" />
+        <state relative-caret-position="18">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/secondary.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="447">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <caret line="72" column="81" lean-forward="true" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/css/scrollpane.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/spencer/primary.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="288">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/PrimaryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="81" column="72" selection-start-line="81" selection-start-column="72" selection-end-line="81" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/spencer/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="35" column="17" lean-forward="true" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

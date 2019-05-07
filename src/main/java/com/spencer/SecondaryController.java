@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.pcap4j.core.*;
 import org.pcap4j.core.PcapNetworkInterface.PromiscuousMode;
+import org.pcap4j.packet.EthernetPacket;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,8 +25,6 @@ public class SecondaryController implements Initializable {
     private Label deviceLabel;
     @FXML
     private Label timestampLabelView;
-    @FXML
-    private Label headerLabelView;
     @FXML
     private Label payloadLabelView;
 
@@ -60,19 +59,14 @@ public class SecondaryController implements Initializable {
 
         PacketListener packetListener = packet -> {
             System.out.println(packet);
-
             packetList.add(packet);
-            observableList.add(packet.toString());
 
-//            if (packet.contains(IpV4Packet.class)) {
-//                System.out.println(packet.get(IpV4Packet.class).getHeader().getSrcAddr());
-//            }
-//            if (packet.contains(IpV6Packet.class)) {
-//                System.out.println(packet.get(IpV6Packet.class).getHeader().getSrcAddr());
-//            }
-//            if (packet.contains(EthernetPacket.class)) {
+            if (packet.contains(EthernetPacket.class)) {
+                observableList.add(packet.get(EthernetPacket.class).getHeader().toString());
 //                System.out.println(packet.get(EthernetPacket.class).getHeader().getSrcAddr());
-//            }
+            } else {
+                observableList.add(packet.toString());
+            }
         };
 
         try {
@@ -91,15 +85,10 @@ public class SecondaryController implements Initializable {
         packetListView.getSelectionModel().selectedItemProperty().addListener((observable) -> {
             int index = packetListView.getSelectionModel().getSelectedIndex();
             PcapPacket selectedPacket = packetList.get(index);
-            System.out.println(selectedPacket.getPayload());
 
-            if (selectedPacket.getHeader() != null) {
-                headerLabelView.setText(selectedPacket.getHeader().toString());
-            } else {
-                headerLabelView.setText("-");
-            }
+            DataHandler dataHandler = new DataHandler();
 
-            timestampLabelView.setText(selectedPacket.getTimestamp().toString());
+            timestampLabelView.setText(dataHandler.timestampFormatter(selectedPacket.getTimestamp()));
             payloadLabelView.setText(selectedPacket.getPayload().toString());
         });
     }

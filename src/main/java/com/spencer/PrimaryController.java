@@ -80,7 +80,6 @@ public class PrimaryController {
             alert.showAndWait();
         } else {
             PcapNetworkInterface selectedDevice = allDevices.get(index);
-            System.out.println(selectedDevice);
 
             FXMLLoader loader = new FXMLLoader(App.class.getResource("secondary.fxml"));
             Parent parent = loader.load();

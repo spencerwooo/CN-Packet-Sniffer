@@ -1,15 +1,20 @@
 .table-view {
     -fx-border-color: none;
     -fx-background-insets: none;
-    -fx-selection-bar: #404040;
+    -fx-selection-bar: #d8dee9;
 }
 
 .table-view .column-header {
-    -fx-background-color: #404040;
+    -fx-background-color: #3b4252;
     -fx-border-width: 0, 0;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #4c566a;
 }
 
 .table-view .column-header .label {
     -fx-text-fill: white;
     -fx-font-weight: bold;
 }
+

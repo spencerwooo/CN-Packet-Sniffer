@@ -1,74 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <HBox xmlns:fx="http://javafx.com/fxml/1" minWidth="600.0" style="-fx-background-color: #fff;"
       xmlns="http://javafx.com/javafx/8.0.172-ea" fx:controller="com.spencer.PrimaryController">
-    <VBox alignment="CENTER_LEFT" prefHeight="613.0" prefWidth="225.0" spacing="20.0">
+    <VBox alignment="CENTER_LEFT" prefHeight="600.0" prefWidth="225.0" spacing="20.0">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
         </padding>
-        <Label text="Network Adapter List">
+        <Label text="Network Adapter List" textFill="#3b4252">
             <font>
                 <Font name="Noto Sans CJK SC Black" size="16.0"/>
             </font>
         </Label>
-        <ListView fx:id="deviceListView" prefHeight="526.0" prefWidth="185.0" stylesheets="@css/listview.css"/>
+        <JFXListView fx:id="deviceListView" prefHeight="526.0" prefWidth="185.0" stylesheets="@css/listview.css"/>
     </VBox>
     <VBox minWidth="200.0" prefHeight="572.0" prefWidth="412.0" spacing="20.0">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
         </padding>
-        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="360.0" text="Device" textAlignment="CENTER">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="360.0" text="Device" textAlignment="CENTER"
+               textFill="#3b4252">
             <font>
                 <Font name="Noto Sans CJK SC Black" size="16.0"/>
             </font>
         </Label>
         <HBox prefHeight="17.0" prefWidth="360.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="Name">
+            <Label prefHeight="17.0" prefWidth="80.0" text="Name" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceNameLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="76.0" prefHeight="17.0" prefWidth="360.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="Description">
+            <Label prefHeight="17.0" prefWidth="80.0" text="Description" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceDescriptionLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="76.0" prefHeight="140.0" prefWidth="372.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="Address">
+            <Label prefHeight="17.0" prefWidth="80.0" text="Address" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceAddressLabel" alignment="TOP_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="140.0"
-                   prefWidth="281.0" wrapText="true"/>
+                   prefWidth="281.0" wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="150.0" prefHeight="60.0" prefWidth="360.0">
-            <Label prefHeight="61.0" prefWidth="72.0" text="Link Layer Address" wrapText="true">
+            <Label prefHeight="61.0" prefWidth="72.0" text="Link Layer Address" wrapText="true" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceLinkLayerAddressLabel" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="289.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="76.0" prefHeight="17.0" prefWidth="360.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="LoopBack">
+            <Label prefHeight="17.0" prefWidth="80.0" text="LoopBack" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
-            <Label fx:id="deviceLoopBackLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"/>
+            <Label fx:id="deviceLoopBackLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
+                   textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="113.0" prefHeight="17.0" prefWidth="360.0">
             <Label prefHeight="17.0" prefWidth="80.0" text="Up">
@@ -77,32 +81,32 @@
                 </font>
             </Label>
             <Label fx:id="deviceUpLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="311.0" prefHeight="17.0" prefWidth="360.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="Running">
+            <Label prefHeight="17.0" prefWidth="80.0" text="Running" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceRunningLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
         <HBox layoutX="30.0" layoutY="348.0" prefHeight="17.0" prefWidth="360.0">
-            <Label prefHeight="17.0" prefWidth="80.0" text="Local">
+            <Label prefHeight="17.0" prefWidth="80.0" text="Local" textFill="#3b4252">
                 <font>
                     <Font name="Noto Sans CJK SC Bold" size="13.0"/>
                 </font>
             </Label>
             <Label fx:id="deviceLocalLabel" layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="290.0"
-                   wrapText="true"/>
+                   wrapText="true" textFill="#4c566a"/>
         </HBox>
-        <Button fx:id="primaryButton" alignment="CENTER" onAction="#switchToSecondary" prefHeight="27.0"
-                prefWidth="360.0" style="-fx-background-color: #404040;" text="START" textAlignment="CENTER"
-                textFill="WHITE">
+        <JFXButton fx:id="primaryButton" alignment="CENTER" onAction="#switchToSecondary" prefHeight="30.0"
+                   prefWidth="360.0" style="-fx-background-color: #5e81ac;" text="START" textAlignment="CENTER"
+                   textFill="white">
             <font>
                 <Font name="Noto Sans CJK SC Regular" size="13.0"/>
             </font>
-        </Button>
+        </JFXButton>
     </VBox>
 </HBox>

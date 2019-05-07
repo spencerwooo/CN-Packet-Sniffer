@@ -1,10 +1,14 @@
-.list-view {
-    -fx-border-color: none;
+.jfx-list-view {
+    -fx-border-color: #4c566a;
     -fx-background-insets: none;
-    -fx-selection-bar: #404040;
+    -fx-selection-bar: #d8dee9;
 }
 
-.list-view .list-cell {
-    -fx-border-color: white;
+.jfx-list-view .jfx-list-cell {
     -fx-background-insets: none;
+    -fx-text-fill: #4c566a;
+}
+
+.jfx-list-view .jfx-list-cell .jfx-rippler {
+    -jfx-rippler-fill: #eceff4;
 }

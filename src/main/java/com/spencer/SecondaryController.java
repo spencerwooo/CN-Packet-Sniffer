@@ -3,6 +3,7 @@ package com.spencer;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -27,6 +28,8 @@ public class SecondaryController implements Initializable {
     private Label timestampLabelView;
     @FXML
     private Label payloadLabelView;
+    @FXML
+    private ScrollPane scrollPaneView;
 
     @FXML
     private TableView<PacketTableItem> packetTableView;
@@ -91,6 +94,8 @@ public class SecondaryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) throws NullPointerException {
+        scrollPaneView.setFitToWidth(true);
+
         packetTime.setCellValueFactory(new PropertyValueFactory<>("packetTimestamp"));
         packetSource.setCellValueFactory(new PropertyValueFactory<>("packetSourceAddr"));
         packetDestination.setCellValueFactory(new PropertyValueFactory<>("packetDestinationAddr"));
